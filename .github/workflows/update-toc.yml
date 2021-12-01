@@ -1,7 +1,6 @@
 on:
   push:
     paths: ['projects.md']
-    branches: ['master']
             
 jobs:
   update-projectstoc:
