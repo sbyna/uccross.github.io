@@ -37,10 +37,6 @@ Table of Contents:
       * [Add Ability to create and save views from Datasets](#add-ability-to-create-and-save-views-from-datasets)
       * [Integrating Delta Lake on top of SkyhookDM](#integrating-delta-lake-on-top-of-skyhookdm)
    * [SkyhookDM/HDF5](#skyhookdmhdf5)
-      * [HDF5 - Apache Arrow Integration](#hdf5---apache-arrow-integration)
-      * [HDF5 - Ceph RADOS Integration](#hdf5---ceph-rados-integration)
-      * [Column-storage in HDF5](#column-storage-in-hdf5)
-      * [Sparse data storage in HDF5](#sparse-data-storage-in-hdf5)
       * [Metadata search in HDF5 with Database Solutions](#metadata-search-in-hdf5-with-database-solutions)
    * [Proactive Data Containers (PDC)](#proactive-data-containers-pdc)
       * [Python interface to an object-centric data management system](#python-interface-to-an-object-centric-data-management-system)
@@ -393,64 +389,6 @@ The HDF5 technology suite includes:
 
 
 -------------------
-
-### HDF5 - Apache Arrow Integration
-
-  * **Topics**: `VOL connector`, `streaming data`, `column store`
-  * **Skills**: C, HDF5, Apache Arrow
-  * **Difficulty**: Medium
-  * **Mentor**: Suren Byna <mailto:sbyna@lbl.gov>
-
-[Apache Arrow](https://arrow.apache.org) creates in-memory column stores that can be used to manage streamed data.
-Accessing this data through the HDF5 API would allow applications to take advantage of transient, column-oriented
-data streams, such as realtime data from high-speed scientific instruments and cameras.  Bridging the gap between
-science applications and analytics tools that use HDF5 and Apache Arrow data streams could bring new kinds of tools
-and data together.  This project will create a standalone HDF5 [VOL connector](https://portal.hdfgroup.org/display/HDF5/Virtual+Object+Layer)
-that allows applications to make HDF5 calls to access Apache Arrow data.
-
--------
-
-### HDF5 - Ceph RADOS Integration
-
-  * **Topics**: `VOL connector`, `Ceph`, `object storage`
-  * **Skills**: C, HDF5, Ceph / RADOS
-  * **Difficulty**: Medium
-  * **Mentor**: Suren Byna <mailto:sbyna@lbl.gov>
-
-The [Ceph](https://ceph.io) distributed storage system provides object, block, and file system layer interfaces.
-A prototype HDF5 [VOL connector](https://portal.hdfgroup.org/display/HDF5/Virtual+Object+Layer) has been developed
-to access the [RADOS](https://ceph.io/geen-categorie/the-rados-distributed-object-store/) object storage layer, enabling
-HDF5 objects (datasets, groups, etc) to be directly stored as RADOS objects.  This project would expand the capabilities
-of this VOL connector, enabling HDF5 applications to store data directly in RADOS pools.
-
--------
-
-### Column-storage in HDF5
-
-  * **Topics**: `HDF5`, `column-store`
-  * **Skills**: C, HDF5
-  * **Difficulty**: High
-  * **Mentor**: Suren Byna <mailto:sbyna@lbl.gov>
-
-[Column-oriented storage](https://en.wikipedia.org/wiki/Column-oriented_DBMS) provides efficient access to fields within
-records, across many rows.  Adding this storage method to HDF5 would dramatically improve performance for applications that
-primarily access subsets of the fields in an HDF5 dataset.
-
--------
-
-### Sparse data storage in HDF5
-
-  * **Topics**: `HDF5`, `sparse data`
-  * **Skills**: C, HDF5
-  * **Difficulty**: High
-  * **Mentor**: Suren Byna <mailto:sbyna@lbl.gov>
-
-[Sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix) have applications in many fields within science and mathematics.
-Storing and accesssing them in HDF5 is inefficient though, as HDF5 is currently optimized for storing dense arrays.
-Adding efficient storage of sparse data in HDF5 would dramatically improve performance for applications that wish to store and
-access sparse data.  This could extend beyond sparse matrices proper, and include any form of sparsely populated array or table.
-
--------
 
 ### Metadata search in HDF5 with Database Solutions
 
